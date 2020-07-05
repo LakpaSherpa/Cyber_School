@@ -1,9 +1,11 @@
 var express = require('express');
 var myapp = new express();
+var bodyParser = require('body-parser');
 
 
-
-
+// bodyParser
+myapp.use(bodyParser.json());
+myapp.use(bodyParser.urlencoded({ extended: true }));
 
 
 
