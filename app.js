@@ -7,6 +7,12 @@ var bodyParser = require('body-parser');
 myapp.use(bodyParser.json());
 myapp.use(bodyParser.urlencoded({ extended: true }));
 
+// path
+myapp.use(express.static(
+    path.join(__dirname, '/resources')
+));
+
+
 
 
 
