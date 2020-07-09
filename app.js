@@ -13,6 +13,13 @@ myapp.use(express.static(
     path.join(__dirname, '/resources')
 ));
 
+// sequelize
+var mysequelize = require('./configs/dbconfigs.js');
+var mysequelize = require('./models/studentModel.js');
+var mysequelize = require('./models/teacherModel.js');
+
+
+
 
 
 
