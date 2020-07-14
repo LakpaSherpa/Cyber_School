@@ -62,6 +62,38 @@ var authController = require('./controllers/authController');
 
 
 
+//Video Table Register
+myapp.post('/video/register', upload.single('courseVideo'), videoController.videoRegister, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "New Video Data registered"
+        // "token": req.genToken
+    })
+});
+
+
+
+// upload student profile Image
+myapp.post('/student/register/studentImage', upload.single('studentImage'), studentController.studentImageUpdate, function (req, res) {
+    res.send({
+
+        "status": 200,
+        "message": "Student Profile Image Registered",
+        "name": req.testVall
+    })
+});
+
+// upload teacher profile Image
+myapp.post('/teacher/register/teacherImage', uploadImage.single('teacherImage'), teacherController.teacherImageUpdate, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Teacher Profile Image Registered",
+        "name": req.testVall
+    })
+});
+
+
+
 
 //this is the first middleware - application middleware , all routes hit this middleware first
 myapp.use(function (req, res, next) {
