@@ -57,6 +57,9 @@ var mystoragee = multer.diskStorage({
     }
 });
 
+// controllers require
+var authController = require('./controllers/authController');
+
 
 
 
