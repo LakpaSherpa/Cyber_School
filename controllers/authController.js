@@ -43,6 +43,32 @@ function StudentTeacherEmailCheck(req, res, next){
 }      
 
 
+// Student Email check
+function studentvalidator(req, res, next) {
+    studentmodel.findOne({
+            where: {
+                email: req.body.Email
+            }
+        })
+        
+        // use had already registered
+        .then(function(result) {
+            // store the user's hash password obtained from database in a variable and pass it through req object
+            req.userHashPassword = result.dataValues.password;
+            req.userInfo = result.dataValues;
+            // console.log(req.userInfo);
+            next();
+        })
+        // err denotes the user was not found - > user was not registerd 
+        .catch(function(err) {
+
+            next({
+                "status": 400,
+                "message": "Please register student data first to login"
+            })
+
+        })
+}
 
 
 
