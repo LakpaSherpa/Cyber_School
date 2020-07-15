@@ -94,6 +94,115 @@ myapp.post('/teacher/register/teacherImage', uploadImage.single('teacherImage'),
 
 
 
+//Student Register
+myapp.post('/student/register', studentController.duplicateEmail, studentController.emailCheck, studentController.passwordHash, studentController.studentRegister, authController.jwtTokenGen, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "New Student Registered",
+        "token": req.genToken
+    })
+});
+
+
+// student and teacher login route
+myapp.post('/student/login', authController.StudentTeacherEmailCheck, authController.checkPasswordMatch, authController.jwtTokenGen, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "logged in",
+        "usertype": req.usertype,
+        "token": req.genToken,
+        "info": req.userInfo
+    })
+});
+
+
+// Student Update
+myapp.put('/student/update/:id', studentController.studentUpdate, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "student data updated",
+        "info": req.userInfoo
+    })
+});
+
+
+//Teacher Register
+myapp.post('/teacher/register', teacherController.duplicateEmail, teacherController.emailCheck, teacherController.passwordHash, teacherController.teacherRegister, authController.jwtTokenGen, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "New Teacher Registered",
+        "token": req.genToken
+    })
+});
+
+
+//techer login
+myapp.post('/teacher/login', authController.teachervalidator, authController.checkPasswordMatch, authController.jwtTokenGen, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Teacher logged in"
+    })
+});
+
+// teacher Update
+
+myapp.put('/teacher/update/:id', teacherController.teacherUpdate, function (req, res) {
+
+    res.send({
+        "status": 200,
+        "message": "teacher data updated",
+
+        "info": req.userInfoo,
+        "token": req.genToken,
+    })
+});
+
+// delete student data
+myapp.get('/student/delete/:id', studentController.deleteStudent, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Student deleted"
+    })
+});
+
+
+// delete teacher data
+myapp.get('/teacher/delete/:id', teacherController.deleteTeacher, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Teacher deleted"
+    })
+});
+
+
+// delete Courses data
+myapp.get('/course/delete/:id', courseController.deleteCourse, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Courses deleted"
+    })
+});
+
+// delete Course type data
+myapp.get('/coursetype/delete/:id', coursetypeController.deleteCoursetype, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Course Type deleted"
+    })
+});
+
+
+// fetch student data
+myapp.get('/get/student/:id', studentController.getStudentData, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Student data fetched",
+        "info": req.allUser
+    })
+});
+
+
+
 
 //this is the first middleware - application middleware , all routes hit this middleware first
 myapp.use(function (req, res, next) {
