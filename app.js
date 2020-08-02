@@ -1,4 +1,4 @@
-vvar express = require('express');
+var express = require('express');
 var myapp = new express();
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -20,31 +20,9 @@ myapp.use(function (req, res, next) {
 });
 
 
-
-
-
-
-let initCallback;
-
-
-//this is the first middleware - application middleware , all routes hit this middleware first
-myapp.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'content-type,X-Requested-With,authorization');
-    next(); // next passes to another application middleware
-});
-
-
 // bodyParser
 myapp.use(bodyParser.json());
 myapp.use(bodyParser.urlencoded({ extended: true }));
-
-// path
-myapp.use(express.static(
-    path.join(__dirname, '/resources')
-));
-
 
 
 // path
@@ -264,65 +242,6 @@ myapp.get('/get/student', studentController.getStudentAllData, function (req, re
     })
 });
 
-
-// fetch teacher data
-myapp.get('/get/teacher/:id', teacherController.getTeacherData, function (req, res) {
-    res.send({
-        "status": 200,
-        "message": "Teacher data fetched",
-        "info": req.allUser
-    })
-});
-
-//fetch video data using courseID
-myapp.get('/get/video/:id', videoController.getAllVideoData, function (req, res) {
-    res.send({
-        "status": 200,
-        "message": "Video data fetched",
-        "info": req.allUser
-    })
-});
-
-
-// fetch all teachers data
-myapp.get('/get/teacher', teacherController.getTeacherAllData, function (req, res) {
-    res.send({
-        "status": 200,
-        "message": "All Teachers data fetched",
-        "info": req.allUser
-    })
-});
-
-// fetch coursetype data
-myapp.get('/get/coursetype/:id', coursetypeController.getCoursetypeData, function (req, res) {
-    res.send({
-        "status": 200,
-        "message": "Course Type data fetched",
-        "info": req.allUser
-    })
-});
-
-// fetch course data
-
-
-myapp.get('/get/courset', courseController.getCourseDatabyteacher, courseController.getCourseAverageRating, function (req, res) {
-
-    res.send({
-        "status": 200,
-        "message": "courses data fetched",
-        "info": req.CourseData,
-        "average": req.AvgCourseRating
-    })
-});
-
-// fetch course data
-myapp.get('/get/course/:id', courseController.getCourseData, function (req, res) {
-    res.send({
-        "status": 200,
-        "message": "Course data fetched",
-        "info": req.CourseData
-    })
-});
 
 
 //this is the first middleware - application middleware , all routes hit this middleware first
