@@ -242,15 +242,65 @@ myapp.get('/get/student', studentController.getStudentAllData, function (req, re
     })
 });
 
-// fetch course data
-// myapp.get('/get/course/:id', courseController.getCourseData, function(req, res) {
-//     res.send({
-//         "status": 200,
-//         "message": "Course data fetched",
-//         "info": req.allUser
-//     })
-// });
 
+// fetch teacher data
+myapp.get('/get/teacher/:id', teacherController.getTeacherData, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Teacher data fetched",
+        "info": req.allUser
+    })
+});
+
+//fetch video data using courseID
+myapp.get('/get/video/:id', videoController.getAllVideoData, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Video data fetched",
+        "info": req.allUser
+    })
+});
+
+
+// fetch all teachers data
+myapp.get('/get/teacher', teacherController.getTeacherAllData, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "All Teachers data fetched",
+        "info": req.allUser
+    })
+});
+
+// fetch coursetype data
+myapp.get('/get/coursetype/:id', coursetypeController.getCoursetypeData, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Course Type data fetched",
+        "info": req.allUser
+    })
+});
+
+// fetch course data
+
+
+myapp.get('/get/courset', courseController.getCourseDatabyteacher, courseController.getCourseAverageRating, function (req, res) {
+
+    res.send({
+        "status": 200,
+        "message": "courses data fetched",
+        "info": req.CourseData,
+        "average": req.AvgCourseRating
+    })
+});
+
+// fetch course data
+myapp.get('/get/course/:id', courseController.getCourseData, function (req, res) {
+    res.send({
+        "status": 200,
+        "message": "Course data fetched",
+        "info": req.CourseData
+    })
+});
 
 
 //this is the first middleware - application middleware , all routes hit this middleware first
