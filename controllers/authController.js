@@ -72,6 +72,117 @@ function studentvalidator(req, res, next) {
 
 
 
+// match hash passwod
+function teachervalidator(req, res, next) {
+    teachermodel.findOne({
+            where: {
+                email: req.body.Email
+            }
+        })
+        // use had already registered
+        .then(function(result) {
+            // store the teacher'shash password obtained from database in a variable and pass it through req object
+            req.userHashPassword = result.dataValues.password;
+            req.userInfo = result.dataValues;
+            // console.log(req.userInfo);
+            next();
+        })
+        // err denotes the user was not found - > user was not registerd 
+        .catch(function(err) {
+
+            next({
+                "status": 400,
+                "message": "Please register teacher data first to login"
+            })
+
+        })
+}
+
+
+// check admin email for validation
+function adminValidator(req, res, next) {
+    // console.log(req.body.Email);
+    adminmodel.findOne({
+            where: {
+                email: req.body.Email
+            }
+        })
+        // use had already registered
+        .then(function(result) {
+            // store the user's hash password obtained from database in a variable and pass it through req object
+            req.userHashPassword = result.dataValues.password;
+            req.userInfo = result.dataValues;
+            // console.log(req.userInfo);
+            next();
+        })
+        // err denotes the user was not found - > user was not registerd 
+        .catch(function(err) {
+
+            next({
+                "status": 400,
+                "message": "Unauthorized Access"
+            })
+
+        })
+}
+
+
+// check user token email
+function tokenemailvalidator(req, res, next) {
+
+    studentmodel.findOne({
+
+            where: {
+                email: req.email
+            }
+        })
+        // use had already registered
+        .then(function(result) {
+            // store the user's hash password obtained from database in a variable and pass it through req object
+            // req.userHashPassword = result.dataValues.password;
+            req.userInfoo = result.dataValues;
+            // console.log(req.userInfo);
+            next();
+        })
+        // err denotes the user was not found - > user was not registerd 
+        .catch(function(err) {
+
+            next({
+                "status": 400,
+                "message": "Invalid user token"
+            })
+
+        })
+}
+
+// check admin token email
+function admintokenemailvalidator(req, res, next) {
+
+    adminmodel.findOne({
+
+            where: {
+                email: req.email
+            }
+        })
+        // use had already registered
+        .then(function(result) {
+            // store the user's hash password obtained from database in a variable and pass it through req object
+            // req.userHashPassword = result.dataValues.password;
+            req.adminInfoo = result.dataValues;
+            // console.log(req.userInfo);
+            next();
+        })
+        // err denotes the user was not found - > user was not registerd 
+        .catch(function(err) {
+
+            next({
+                "status": 400,
+                "message": "Invalid user token"
+            })
+
+        })
+}
+
 
 
 
