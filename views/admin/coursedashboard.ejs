@@ -60,3 +60,35 @@
       <th scope="col">Delete</th>
     </tr>
   </thead>
+  <tbody id="coursesListBody">
+
+    <tr>
+      <th scope="row">1</th>
+      <td>JAVA</td>
+      <td>very tori language</td>
+      <td>20 hours</td>
+      <td>$300</td>
+      <td>The IMAGE</td>
+      <td>Web</td>
+      <td>Robin</td>
+      <td><button type="button" id="edit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Edit</button></td>
+      <td><button type="button" id="delete" class="btn btn-danger">Delete</button></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Course </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+ <form  class="form-horizontal" id="editUserr"  method= "POST"  enctype="multipart/form-data">
+<fieldset>
