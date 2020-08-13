@@ -8,3 +8,13 @@ chai.use(require('chai-things'));
 chai.use(chaiHttp);
 
 const myapp = require('../app.js');
+
+let serverr
+
+before(done => {
+    serverr = myapp.listen(2000, done);
+});
+
+after(done => {
+    serverr.close(done);
+});
