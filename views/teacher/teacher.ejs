@@ -37,6 +37,49 @@
 </nav>
 <br>
 
+<section class="teacherForms">
+    <form class=""  method="post" id="teacherSignupForm">
+      <h3>Sign up</h3>
+      <input type="text" name="" value="teacher" id="teacherFirstName" placeholder="Enter the First Name" class="signupInputs form-control">
+      <input type="text" name="" value="teacher" id="teacherLastName" placeholder="Enter the Last Name" class="signupInputs form-control">
+      <div class="gender">
+            <input type="radio" name="gender" value="male" id="male" checked="">
+            <label for="male" >Male</label>
+
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">Female</label>
+
+            <input type="radio" name="gender" value="other" id="other">
+            <label for="other">Other</label>
+      </div>
+
+      <input placeholder="Enter the Date of Birth" class="textbox-n signupInputs form-control " type="text" onblur="(this.type='text')"
+      onfocus="(this.type='date')" value="12-12-2000"  id="teacherDOB">
+
+      <input type="text" name="" value="1234567890" id="teacherPhone" class="signupInputs form-control" placeholder="Enter the phone">
+
+      <input type="text" name="" value="ktm" id="teacherAddress" class="signupInputs form-control" placeholder="Enter the Address">
+
+      <textarea class="w-100 form-control" id="teacherBio" placeholder="Enter your bio"></textarea>
+
+      <input type="email" name="" value="teacher@gmail.com" id="teacherEmail" class="signupInputs form-control" placeholder="Enter the Email">
+      <input type="password" name="" value="12" id="teacherPassword" class="signupInputs form-control" placeholder="Enter the password">
+      <input type="password" name="" value="12" id="teacherConfirmPassword" class="signupInputs form-control" placeholder="Confirm the password">
+      <button type="submit" name="button" class="btn btn-primary w-100">Signup</button>
+    </form>
+
+    <!-- <form class="bg-white"  method="post" id="teacherLoginForm" style="display:none">
+      <h3>Log In</h3>
+      <input type="text" name="" value="" class="form-control" placeholder="Enter the Email" id="loginEmail">
+      <input type="text" name="" value="" class="form-control" placeholder="Enter the password" id="loginPassword">
+      <button type="submit" name="button" class="btn btn-primary">Log In</button>
+    </form> -->
+  </section>
+
+
+
+
+
 
 </body>
 
