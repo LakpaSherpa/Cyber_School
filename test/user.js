@@ -19,22 +19,23 @@ after(done => {
     serverr.close(done);
 });
 
-// Register student
-describe('Students', function() {
-    describe('POST student register', function() {
-
-        it('it should register a single student', function(done) {
+// Register teacher
+describe('Users', function() {
+    describe('POST user register', function() {
+        it('it should register a single user', function(done) {
             chai.request(myapp)
-                .post('/student/register')
+                .post('/admin/register/teacher')
                 .send({
                     "FirstName": 'Jeson',
                     "LastName": 'sherpa',
                     "Gender": 'male',
-                    "DOB": '2019-06-17',
-                    "Phone": '+977-9843384828',
+                    "UserType": 'male',
                     "Address": 'Baneshwor',
-                    "Email": 'pasanglakpasherpa101@gmail.com',
-                    "Password": 'arps'
+                    "DOB": '2019-06-17',
+                    "Email": 'pasanglakpasherpa101.com',
+                    "Phone": '+977-9843384828',
+                    "Bio": 'Teacher for 4 years',
+                    "Password": 'asd'
                 })
                 .end(function(err, res) {
                     res.should.have.status(200);
