@@ -93,3 +93,22 @@ describe('Students', function() {
         })
     })
 })
+
+// login
+describe('users', () => {
+    describe('/POST login', () => {
+        it('it should log in user', (done) => {
+            // chai.request(baseUrlRoutes)
+            chai.request(myapp)
+                .post('/user/login')
+                .send({
+                    "email": 'pasanglakpasherpa101@gmail.com',
+                    "password": 'asd',
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+});
