@@ -242,7 +242,7 @@ myapp.get('/get/student', studentController.getStudentAllData, function (req, re
     })
 });
 
-<<<<<<< Updated upstream
+// Updated upstream
 
 
 //this is the first middleware - application middleware , all routes hit this middleware first
@@ -252,7 +252,7 @@ myapp.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Headers', 'content-type,X-Requested-With,authorization');
     next(); // next passes to another application middleware
 });
-=======
+
 // fetch course data
 // myapp.get('/get/course/:id', courseController.getCourseData, function(req, res) {
 //     res.send({
@@ -456,7 +456,7 @@ myapp.get('/teacher/register', function (req, res) {
     res.render('teacher/teacher');
 })
 
->>>>>>> Stashed changes
+//Stashed changes
 
 //  student search
 myapp.post('/Student/search', studentController.searchStudent, function (req, res) {
