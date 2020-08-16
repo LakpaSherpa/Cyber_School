@@ -112,3 +112,23 @@ describe('users', () => {
         });
     });
 });
+
+
+// admin login
+describe('teacher login', () => {
+    describe('/POST login', () => {
+        it('it should log in admin', (done) => {
+            // chai.request(baseUrlRoutes)
+            chai.request(myapp)
+                .post('/teacher/login')
+                .send({
+                    "email": 'pasanglakpasherpa101.com',
+                    "password": 'asd',
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+});
