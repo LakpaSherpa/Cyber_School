@@ -242,7 +242,20 @@ myapp.get('/get/student', studentController.getStudentAllData, function (req, re
     })
 });
 
-// fetch course data
+//Updated upstream
+
+// Updated upstream
+
+
+//this is the first middleware - application middleware , all routes hit this middleware first
+myapp.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'content-type,X-Requested-With,authorization');
+    next(); // next passes to another application middleware
+});
+
+/// fetch course data
 // myapp.get('/get/course/:id', courseController.getCourseData, function(req, res) {
 //     res.send({
 //         "status": 200,
@@ -444,6 +457,10 @@ myapp.get('/adminstudentdashboard', function (req, res) {
 myapp.get('/teacher/register', function (req, res) {
     res.render('teacher/teacher');
 })
+
+//Updated upstream
+
+// Stashed changes
 
 
 //  student search
