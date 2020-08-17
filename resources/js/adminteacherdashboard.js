@@ -71,3 +71,76 @@ $(document).ready(function(){
 });
 
 
+
+// edit teacher
+$(document).on('click', '.editTeacher', function(e) {
+    e.preventDefault();
+    var id = $(this).attr('data-id');
+    // alert(id);  
+    $.ajax({
+        url: 'http://localhost:3000/get/teacher/' + id,
+        method: 'get',
+        contentType: 'application/json',
+        success: function(result, status) {
+            // console.log(result.info);
+            alert(id);
+            $('#eFirstName').val(result.info.first_name);
+            $('#eLastName').val(result.info.last_name);
+            $('#eAddress').val(result.info.address);
+            $('#ePhone').val(result.info.phone);
+            $('#eDOB').val(result.info.dob);
+            $('#ePhone').val(result.info.phone);
+            $('#eGender').val(result.info.gender);
+            $('#eVerify').val(result.info.verify);
+            $('#eEmail').val(result.info.email);
+            $('#eBio').val(result.info.bio);
+            $('#teacherEditSave').attr('data-id', result.info.id);
+        },
+        error: function(jqXHR, status) {
+            console.log(status);
+            console.log(jqXHR.responseJSON.message);
+        }
+    });
+});
+
+
+// edit save button click
+$(document).on('click', '#teacherEditSave', function(e) {
+    e.preventDefault();
+    var id = $(this).attr('data-id');
+    // alert(id);
+    var teacherEditData = {
+        // key         value
+        FirstName: $('#eFirstName').val(),
+        LastName: $('#eLastName').val(),
+        Gender: $('#eGender').val(),
+        DOB: $('#eDOB').val(),
+        Phone: $('#ePhone').val(),
+        Address: $('#eAddress').val(),
+        Email: $('#eEmail').val(),
+        Bio: $('#eBio').val(),
+        Verify: $('#eVerify').val()
+    }
+    // console.log(teacherEditData);
+    $.ajax({
+        url: 'http://localhost:3000/teacher/update/'+id,
+        method: 'put',
+        contentType: 'application/json',
+        data: JSON.stringify(teacherEditData),
+        beforeSend: function() {
+            // setting a timeout
+        },
+        success: function(result, status) {
+          alert(result.message);
+          window.location.href = "adminteacherdashboard";
+        },
+        error: function(jqXHR, status) {
+            console.log(status);
+            console.log(jqXHR.responseJSON.message);
+            alert(jqXHR.responseJSON.message);
+        }
+    });
+    
+});
+
+
