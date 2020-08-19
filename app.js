@@ -242,8 +242,6 @@ myapp.get('/get/student', studentController.getStudentAllData, function (req, re
     })
 });
 
-//Updated upstream
-
 // Updated upstream
 
 
@@ -255,7 +253,7 @@ myapp.use(function (req, res, next) {
     next(); // next passes to another application middleware
 });
 
-/// fetch course data
+// fetch course data
 // myapp.get('/get/course/:id', courseController.getCourseData, function(req, res) {
 //     res.send({
 //         "status": 200,
@@ -458,10 +456,7 @@ myapp.get('/teacher/register', function (req, res) {
     res.render('teacher/teacher');
 })
 
-//Updated upstream
-
-// Stashed changes
-
+//Stashed changes
 
 //  student search
 myapp.post('/Student/search', studentController.searchStudent, function (req, res) {
