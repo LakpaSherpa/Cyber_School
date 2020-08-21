@@ -47,6 +47,56 @@ describe('Users', function() {
     })
 })
 
+<<<<<<< HEAD
+=======
+// admin login
+describe('admin login', () => {
+    describe('/POST login', () => {
+        it('it should log in admin', (done) => {
+            // chai.request(baseUrlRoutes)
+            chai.request(myapp)
+                .post('/admin/login')
+                .send({
+                    "email": 'pasanglakpasherpa101.com',
+                    "password": 'arps',
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+});
+
+
+
+// Register student
+describe('Students', function() {
+    describe('POST student register', function() {
+        it('it should register a single student', function(done) {
+            chai.request(myapp)
+                .post('/student/register')
+                .send({
+                    "FirstName": 'Jeson',
+                    "LastName": 'sherpa',
+                    "Gender": 'male',
+                    "DOB": '2019-06-17',
+                    "Phone": '+977-9843384828',
+                    "Address": 'Baneshwor',
+                    "Email": 'pasanglakpasherpa101@gmail.com',
+                    "Password": 'arps'
+                })
+                .end(function(err, res) {
+                    res.should.have.status(200);
+                    res.body.should.be.an('object');
+                    // res.body.should.have.property('message').eql('user data registered');
+                    done();
+                })
+        })
+    })
+})
+
+>>>>>>> master
 // login
 describe('users', () => {
     describe('/POST login', () => {
@@ -64,4 +114,27 @@ describe('users', () => {
                 });
         });
     });
+<<<<<<< HEAD
 });
+=======
+});
+
+// admin login
+describe('teacher login', () => {
+    describe('/POST login', () => {
+        it('it should log in admin', (done) => {
+            // chai.request(baseUrlRoutes)
+            chai.request(myapp)
+                .post('/teacher/login')
+                .send({
+                    "email": 'pasanglakpasherpa101.com',
+                    "password": 'asd',
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                });
+        });
+    });
+})
+>>>>>>> master
