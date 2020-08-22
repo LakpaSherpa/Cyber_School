@@ -19,6 +19,8 @@ after(done => {
     serverr.close(done);
 });
 
+<<<<<<< HEAD
+=======
 // Register teacher
 describe('Users', function() {
     describe('POST user register', function() {
@@ -67,10 +69,15 @@ describe('admin login', () => {
 });
 
 
+>>>>>>> master
 
 // Register student
 describe('Students', function() {
     describe('POST student register', function() {
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
         it('it should register a single student', function(done) {
             chai.request(myapp)
                 .post('/student/register')
@@ -93,6 +100,8 @@ describe('Students', function() {
         })
     })
 })
+<<<<<<< HEAD
+=======
 
 // login
 describe('users', () => {
@@ -131,3 +140,4 @@ describe('teacher login', () => {
         });
     });
 })
+>>>>>>> master
