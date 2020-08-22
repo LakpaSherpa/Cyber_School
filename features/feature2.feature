@@ -10,4 +10,8 @@ Steps:
     * Post to service api "<URL>" with '<data>' and I should get the '<expectval>'
     Examples: 
       | URL                                    | data                                                                                                                                                          | expectval                                             |
+<<<<<<< HEAD
       | http://localhost:3000/student/register | { "Email":"pasanglakpasherpa@gmail.com","Password":"asd","FirstName":"Pasanglakpa","LastName":"Sherpa","Address":"Baneshwor","Phone":"9817849333","DOB":"1997-06-02","Gender":"male" } | { "status": 200, "message": "New Student Registered"} |
+=======
+      | http://localhost:3000/student/register | { "Email":"sherpapasanga@gmail.com","Password":"asd","FirstName":"Pasanglakpa","LastName":"Sherpa","Address":"Jorpati","Phone":"9817849333","DOB":"1995-03-02","Gender":"male" } | { "status": 200, "message": "New Student Registered"} |
+>>>>>>> system_controller
