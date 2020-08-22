@@ -73,6 +73,14 @@ function token(req, res, next) {
 
 
 
+<<<<<<< HEAD
+
+
+
+
+
+=======
+>>>>>>> functionality
 module.exports = {
     ratingRegister,
  

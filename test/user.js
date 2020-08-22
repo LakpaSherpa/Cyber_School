@@ -19,6 +19,11 @@ after(done => {
     serverr.close(done);
 });
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> functionality
 // Register teacher
 describe('Users', function() {
     describe('POST user register', function() {
@@ -48,6 +53,13 @@ describe('Users', function() {
 })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> functionality
+>>>>>>> 650660b6e29f734c45b9349fa8e8ca7559a4f851
 // admin login
 describe('admin login', () => {
     describe('/POST login', () => {
@@ -68,10 +80,15 @@ describe('admin login', () => {
 });
 
 
+>>>>>>> master
 
 // Register student
 describe('Students', function() {
     describe('POST student register', function() {
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
         it('it should register a single student', function(done) {
             chai.request(myapp)
                 .post('/student/register')
@@ -94,9 +111,20 @@ describe('Students', function() {
         })
     })
 })
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
 =======
 >>>>>>> functionality
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> functionality
+=======
+>>>>>>> master
+>>>>>>> functionality
+>>>>>>> 650660b6e29f734c45b9349fa8e8ca7559a4f851
 // login
 describe('users', () => {
     describe('/POST login', () => {
@@ -115,9 +143,19 @@ describe('users', () => {
         });
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
 });
 
 
+=======
+<<<<<<< HEAD
+=======
+});
+=======
+>>>>>>> functionality
+});
+
+>>>>>>> 650660b6e29f734c45b9349fa8e8ca7559a4f851
 // admin login
 describe('teacher login', () => {
     describe('/POST login', () => {
@@ -135,7 +173,18 @@ describe('teacher login', () => {
                 });
         });
     });
+<<<<<<< HEAD
 });
 =======
 });
 >>>>>>> functionality
+=======
+})
+>>>>>>> master
+<<<<<<< HEAD
+=======
+});
+>>>>>>> functionality
+=======
+>>>>>>> functionality
+>>>>>>> 650660b6e29f734c45b9349fa8e8ca7559a4f851
