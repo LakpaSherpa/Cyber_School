@@ -47,6 +47,7 @@ describe('Users', function() {
     })
 })
 
+<<<<<<< HEAD
 // admin login
 describe('admin login', () => {
     describe('/POST login', () => {
@@ -94,6 +95,8 @@ describe('Students', function() {
     })
 })
 
+=======
+>>>>>>> functionality
 // login
 describe('users', () => {
     describe('/POST login', () => {
@@ -111,6 +114,7 @@ describe('users', () => {
                 });
         });
     });
+<<<<<<< HEAD
 });
 
 
@@ -132,3 +136,6 @@ describe('teacher login', () => {
         });
     });
 });
+=======
+});
+>>>>>>> functionality
