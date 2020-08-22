@@ -20,7 +20,10 @@ after(done => {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> functionality
 // Register teacher
 describe('Users', function() {
     describe('POST user register', function() {
@@ -49,6 +52,7 @@ describe('Users', function() {
     })
 })
 
+<<<<<<< HEAD
 // admin login
 describe('admin login', () => {
     describe('/POST login', () => {
@@ -103,6 +107,8 @@ describe('Students', function() {
 <<<<<<< HEAD
 =======
 
+=======
+>>>>>>> functionality
 // login
 describe('users', () => {
     describe('/POST login', () => {
@@ -120,6 +126,7 @@ describe('users', () => {
                 });
         });
     });
+<<<<<<< HEAD
 });
 
 // admin login
@@ -141,3 +148,6 @@ describe('teacher login', () => {
     });
 })
 >>>>>>> master
+=======
+});
+>>>>>>> functionality
