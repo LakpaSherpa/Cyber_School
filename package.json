@@ -24,7 +24,7 @@
     "ejs": "^2.7.4",
     "email-verifier": "^0.4.1",
     "express": "^4.17.1",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "json-mock": "^0.1.0",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^8.0.1",
