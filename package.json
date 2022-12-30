@@ -27,7 +27,7 @@
     "got": "^9.6.0",
     "json-mock": "^0.1.0",
     "jsonwebtoken": "^8.5.1",
-    "mocha": "^8.0.1",
+    "mocha": "^8.4.0",
     "multer": "^1.4.2",
     "mysql2": "^1.7.0",
     "nodemon": "^2.0.4",
